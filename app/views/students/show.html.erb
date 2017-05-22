@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% unless @student.photo_url.nil? %>
+    <p><%= image_tag @student.photo_url %></p>
+  <% end %>
+
 <h3>
   <b>Name</b>: <%= @student.proper_name %>
 </h3><br>

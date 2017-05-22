@@ -1,5 +1,5 @@
 <div id="form">
-<%= form_for @student do |f| %>
+<%= form_for @student, :html => { :multipart => true } do |f| %>
     <% if @student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -39,6 +39,11 @@
     <p>
         <%= f.select :year, [['Freshman', 'freshman'],['Sophomore', 'sophomore'],['Junior', 'junior'], ['Senior', 'senior']], :prompt => "Select year..." %>
   </p>
+  
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo %>
+  </div>
   <br />
   <p><%= f.submit (@student.new_record? ? "Sign up" : "Update"), class: "button" %></p>
 <% end %>
