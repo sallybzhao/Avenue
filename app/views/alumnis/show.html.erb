@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+  <b>Name</b>: <%= @alumni.proper_name %>
+</h3><br>
+
+<p>
+  <b>Email</b>: <%= mail_to @alumni.email, @alumni.email, encode: "javascript" %>
+</p>
+
+<p>
+  <b>Phone</b>: <%= @alumni.phone %>
+</p>
+
+<%= link_to 'Edit', edit_alumni_path(@alumni) %> |
+<%= link_to 'Back', alumnis_path %> |
+<td><%= link_to 'Destroy', @alumni, method: :delete, data: { confirm: 'Are you sure?' } %></td>

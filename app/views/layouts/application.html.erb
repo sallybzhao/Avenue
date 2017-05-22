@@ -2,13 +2,27 @@
 <html>
   <head>
     <title>Avenue</title>
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    "general" %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render :partial => "partials/nav" %>
+
+    <div class="row" id="main_div">
+      <div class="small-12 columns" id="main_content">
+        <%= yield %>
+        <div class="push"></div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="small-12 columns" id="footer">
+        <%= render partial: 'partials/footer' %>
+      </div>
+    </footer> 
+
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>

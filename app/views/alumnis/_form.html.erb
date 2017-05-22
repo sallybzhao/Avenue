@@ -1,0 +1,56 @@
+<div id="form">
+<%= form_for @alumni do |f| %>
+    <% if @alumni.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alumni.errors.count, "error") %> prohibited this alumni from being saved:</h2>
+
+      <ul>
+      <% @alumni.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="field juxtapose_l">
+      <p>
+        <%#= f.label :first_name %> <br />
+        <%= f.text_field :first_name, size: 10, placeholder: 'First Name' %>
+      </p>
+    </div>
+    <div class="field juxtapose_r">
+      <p>
+        <%#= f.label :last_name %> <br />
+        <%= f.text_field :last_name, placeholder: 'Last Name' %>
+      </p>
+    </div>
+
+    <div >
+      <p >
+        <%#= f.label :email, "* Email Address" %> <br />
+        <%= f.text_field :email, placeholder: 'Email' %>
+      </p>
+    </div>
+
+    <div class="field juxtapose_l">
+      <p>
+        <%#= f.label :email, "* Email Address" %> 
+        <%= f.text_field :phone, placeholder: 'Phone' %>
+      </p>
+    </div>
+
+    <div class="field juxtapose_r">
+      <p>
+        <%#= f.label :email, "* Email Address" %> 
+        
+        <%= f.text_field :grad_year, placeholder: 'Graduation Year' %>
+      </p>
+    </div>
+
+    <p>
+        <%= f.text_field :degree, placeholder: 'Degree' %>
+  </p>
+  <br />
+  <p><%= f.submit (@alumni.new_record? ? "Sign up" : "Update"), class: "button" %></p>
+<% end %>
+</div>
+

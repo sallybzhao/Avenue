@@ -1,0 +1,31 @@
+<div class="contain-to-grid" >
+  <nav class="top-bar" data-topbar role="navigation"> 
+    <section class="top-bar-section" id="navbar">
+      <ul >
+        <!-- link to home -->
+        <li><%#= link_to image_tag("logo.png"), home_path, id: "logo" %></li>
+
+        <!-- options for items -->
+        <span id="links">
+            <li class="has-dropdown">
+              <%= link_to "STUDENTS", students_path %>
+            </li>
+
+            <li class="has-dropdown">
+              <%= link_to "ALUMNI", alumnis_path %>
+            </li>
+
+          <li class="has-dropdown right">
+            <%#= link_to current_user.first_name.upcase, user_path(current_user) %>
+            <%= link_to "MY ACCOUNT", students_path %>
+            <ul class="dropdown">
+              <li><%#= link_to "Settings", students_path %></li>
+              <li><%#= link_to 'Logout', students_path %></li>
+            </ul>
+          </li>
+
+      </span><!-- links -->
+      </ul>
+    </section>
+  </nav>
+</div>

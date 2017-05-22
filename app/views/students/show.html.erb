@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+  <b>Name</b>: <%= @student.proper_name %>
+</h3><br>
+
+<p>
+  <b>Email</b>: <%= mail_to @student.email, @student.email, encode: "javascript" %>
+</p>
+
+<p>
+  <b>Phone</b>: <%= @student.phone %>
+</p>
+
+<p>
+  <b>Year</b>: <%= @student.year.capitalize %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %> |
+ <td><%= link_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h3 >Students</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="4"> Name </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td> <%= link_to student.proper_name, student_path(student), {:style=>'color: #cc002b;'} %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student', new_student_path, class: 'button' %>

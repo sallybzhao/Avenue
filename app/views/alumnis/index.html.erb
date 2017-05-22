@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alumni</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="1" >Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alumnis.each do |alumni| %>
+      <tr>
+        <td> <%= link_to alumni.proper_name, alumni_path(alumni), {:style=>'color: #cc002b;'} %> </td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alumni', new_alumni_path, class: 'button' %>
